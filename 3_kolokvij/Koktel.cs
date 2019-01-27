@@ -21,37 +21,55 @@ namespace _3_kolokvij
             sastojci.Add(s);
         }
 
-        private double IzracunVolumena()
+
+        public string Posluzi()
         {
-            double casa = 0;
+            string koktelcic = "Posluzujem koktel "+naziv+"\nSastojci: ("+sastojci.Count()+")\n";
+            double izracun = 0;
 
             foreach(Sastojak s in sastojci)
             {
-                casa += s.VratiDecilitre();
+                koktelcic += s.Prikazi() + "\n";
+                izracun += s.VratiDecilitre();
             }
 
-            return casa;
+            return String.Format(koktelcic+"Potrebna casa minimalno dcl: "+izracun);
         }
-        public string Posluzi()
-        {
-            int i = 0;
 
-            return String.Format(
-                "Posluzujem koktel {0}\n" +
-                "Sastojci ({1})\n" +
-                "{2}\n" +
-                "{3}\n" +
-                "{4}\n" +
-                "{5}\n" +
-                "Potrebna casa minimalno dcl: {6}",
-                naziv,
-                sastojci.Count(), 
-                sastojci.ElementAt(i++).Prikazi(), 
-                sastojci.ElementAt(i++).Prikazi(),
-                sastojci.ElementAt(i++).Prikazi(), 
-                sastojci.ElementAt(i++).Prikazi(),
-                 IzracunVolumena());
+
+        //staro i nebitno
+
+        //private double IzracunVolumena()
+        //{
+        //    double casa = 0;
+
+        //    foreach(Sastojak s in sastojci)
+        //    {
+        //        casa += s.VratiDecilitre();
+        //    }
+
+        //    return casa;
+        //}
+        //public string Posluzi()
+        //{
+        //    int i = 0;
+
+        //    return String.Format(
+        //        "Posluzujem koktel {0}\n" +
+        //        "Sastojci ({1})\n" +
+        //        "{2}\n" +
+        //        "{3}\n" +
+        //        "{4}\n" +
+        //        "{5}\n" +
+        //        "Potrebna casa minimalno dcl: {6}",
+        //        naziv,
+        //        sastojci.Count(), 
+        //        sastojci.ElementAt(i++).Prikazi(), 
+        //        sastojci.ElementAt(i++).Prikazi(),
+        //        sastojci.ElementAt(i++).Prikazi(), 
+        //        sastojci.ElementAt(i++).Prikazi(),
+        //         IzracunVolumena());
            
-        }
+        //}
     }
 }

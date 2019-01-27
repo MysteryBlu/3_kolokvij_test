@@ -16,6 +16,9 @@ namespace _3_kolokvij
             CubaLibre.Dodaj(new CocaCola(1, "zero"));
             CubaLibre.Dodaj(new Led("zdrobljeni"));
             Console.WriteLine(CubaLibre.Posluzi());
+
+            
         }
+        
     }
 }
